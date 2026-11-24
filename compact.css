@@ -6,4 +6,4 @@ body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",san
 .project-writing h3,.project-row .project-writing h3{font-size:clamp(26px,3vw,36px);font-family:Inter,sans-serif;font-weight:650;letter-spacing:-.055em;line-height:1.25}.project-row{grid-template-columns:115px 1fr;gap:50px}.project-row .project-writing{max-width:640px}
 .section-projects{padding-top:0}.about-section{padding:76px 0;background:#1a1e1f}.about-grid{gap:55px}.about-copy p{margin-top:0}.contact-section{padding:90px 0}.contact-section p:not(.eyebrow){font-size:14px}
 .preview-standin strong{font-size:clamp(40px,4vw,60px)}.preview-standin{background:#e4ece3}
-@media(max-width:780px){.hero{padding¶»§q«^
+@media(max-width:780px){.hero{padding:90px 0 76px}.project-row{grid-template-columns:1fr;gap:12px}.section{padding-top:65px}.contact-section{padding:70px 0}}

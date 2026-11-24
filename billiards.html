@@ -16,4 +16,59 @@
  <div class="intro"><div class="eyebrow"><span class="live-dot"></span> PLAYGROUND / BILLIARDS</div>
  <h1>Your table.<br><span>Your game.</span></h1><p>Two pool formats. Real 3D physics. Controls that make sense. Set up a match and get straight to the table.</p>
  <div class="subtle-tags"><span>8-ball</span><span>9-ball</span><span>Local two-player</span></div>
- <div class="table-preview" aria-hidden="true"><div class="preview-cloth"><span class="pocket p1"></span><span class="pocket p2"></span><span class="pocket p3"></span><span class="pocket p4"></span><s���q�^
+ <div class="table-preview" aria-hidden="true"><div class="preview-cloth"><span class="pocket p1"></span><span class="pocket p2"></span><span class="pocket p3"></span><span class="pocket p4"></span><span class="pocket p5"></span><span class="pocket p6"></span><span class="preview-cueball"></span><span class="preview-ball ball1"></span><span class="preview-ball ball2"></span><span class="preview-ball ball3"></span><span class="preview-ball ball4"></span><span class="preview-ball ball5"></span><span class="preview-ball ball6"></span><span class="preview-ball ball7"></span><span class="preview-ball ball8"></span></div></div>
+ </div>
+ <div class="setup" aria-label="New match settings">
+ <div class="setup-heading"><span>01 / NEW MATCH</span><h2>Let's play.</h2><p>Choose your game and opponent.</p></div>
+ <div class="control-group"><h3>GAME TYPE</h3>
+ <div class="game-options" role="group" aria-label="Game type">
+  <button class="game-option active" type="button" data-game="eightball" aria-pressed="true"><span class="game-icon eight"><i>8</i></span><span><strong>8-ball pool</strong><small>Solids, stripes, black eight</small></span><span class="choice-indicator" aria-hidden="true"></span></button>
+  <button class="game-option" type="button" data-game="nineball" aria-pressed="false"><span class="game-icon nine"><i>9</i></span><span><strong>9-ball pool</strong><small>Rotation, lowest ball first</small></span><span class="choice-indicator" aria-hidden="true"></span></button>
+ </div></div>
+ <div class="control-group"><h3>OPPONENT</h3><div class="opponent-options" role="group" aria-label="Opponent">
+ <button type="button" data-opponent="hotseat" class="active" aria-pressed="true"><strong>1 vs 1</strong><small>Same device</small></button>
+ <button type="button" data-opponent="bot" aria-pressed="false"><strong>Vs computer</strong><small>Play the bot</small></button></div>
+ <div class="bot-select" id="bot-select" hidden><label for="bot-level">BOT DIFFICULTY</label><select id="bot-level"><option value="TheFarJaw">Challenging</option><option value="ClawBreak">Casual</option></select></div></div>
+ <button class="primary-button" type="button" id="begin">Start match <span aria-hidden="true">↗</span></button>
+ <div class="setup-footer">No account. No matchmaking. <span>Just play.</span></div>
+ </div>
+</main>
+<section id="arena" class="arena" aria-label="Billiards match" hidden>
+ <div class="arena-bar"><button type="button" id="return-lobby" class="return-button"><span aria-hidden="true">←</span> Back to lobby</button><div class="match-heading"><strong id="match-title">8-ball</strong><span class="match-divider">/</span><span id="match-opponent">LOCAL 1V1</span></div><div class="arena-actions"><span class="turn-indicator" id="turn-indicator"><i class="live-dot"></i> Loading game</span><button type="button" id="camera-button">Overhead view</button><button type="button" id="restart-button">Restart ↻</button></div></div>
+ <div id="group-bar" class="group-bar" hidden aria-label="8-ball teams">
+   <div class="player-group current" id="group-player-0"><div class="group-ball" id="group-ball-0" aria-hidden="true"></div><div class="group-details"><strong id="group-name-0">PLAYER 1</strong><span id="group-role-0">OPEN TABLE</span></div><span class="current-marker" id="group-turn-0">TO PLAY</span></div>
+   <span class="group-divider" aria-hidden="true">VS</span>
+   <div class="player-group" id="group-player-1"><div class="group-ball" id="group-ball-1" aria-hidden="true"></div><div class="group-details"><strong id="group-name-1">PLAYER 2</strong><span id="group-role-1">OPEN TABLE</span></div><span class="current-marker" id="group-turn-1" hidden>TO PLAY</span></div>
+   <span class="group-hint" id="group-hint">Groups assigned after a legal pot</span>
+ </div>
+ <div class="match-result" id="match-result" hidden role="status"><div class="result-orb">8</div><div><strong id="result-title">Match finished</strong><span id="result-subtitle">The eight-ball decides the winner.</span></div><button id="result-replay" type="button">Watch replay ↗</button></div>
+ <div class="play-layout">
+ <div class="stage" id="stage"><iframe id="game-frame" title="3D billiards physics engine" src="about:blank" allow="fullscreen; autoplay" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <div class="loading-layer" id="loading-layer"><div class="loader"></div><strong id="loading-title">Setting the table</strong><p>Loading the 3D game...</p></div>
+  <div class="stage-message" id="stage-message">Drag to aim in 3D</div>
+  <div class="stage-bottom"><span>DRAG ON TABLE TO AIM</span><span>SHOOT FROM THE PANEL <span aria-hidden="true">↗</span></span></div>
+ </div>
+ <aside class="shot-panel"><div class="panel-top"><div><div class="eyebrow">SHOT CONTROL</div><h2>Your next move.</h2></div><span id="shot-phase" class="shot-phase">READY</span></div>
+ <div class="panel-section aim-section"><div class="section-heading"><span>01</span><strong>Aim</strong><small>Drag on the table</small></div>
+ <div class="aim-row"><p>Use the table to point the cue. Fine-tune here.</p><div class="fine-buttons"><button type="button" data-nudge="-0.015" aria-label="Aim left">←</button><button type="button" data-nudge="0.015" aria-label="Aim right">→</button></div></div></div>
+ <div class="panel-section power-section"><div class="section-heading"><span>02</span><strong>Power</strong><output id="power-value" for="power-control">65%</output></div>
+ <input aria-label="Shot power" id="power-control" type="range" min="5" max="100" step="1" value="65">
+ <div class="power-endpoints"><span>SOFT</span><span>HARD</span></div>
+ <div class="power-presets" role="group" aria-label="Power presets"><button type="button" data-power="24">Soft</button><button class="active" type="button" data-power="55">Control</button><button type="button" data-power="88">Break</button></div></div>
+ <div class="panel-section spin-section"><div class="section-heading"><span>03</span><strong>Spin</strong><button class="reset-spin" type="button" id="reset-spin">Reset</button></div>
+ <div class="spin-content"><div class="spin-pad" id="spin-pad" role="slider" tabindex="0" aria-label="Cue tip position. Arrow keys adjust spin" aria-valuemin="-100" aria-valuemax="100" aria-valuenow="0"><div class="spin-line horizontal"></div><div class="spin-line vertical"></div><div class="spin-target" id="spin-target"></div><div class="spin-marker" id="spin-marker"></div></div>
+ <div class="spin-options"><button type="button" data-spin="0,0">Centre</button><button type="button" data-spin="0,.28">Follow</button><button type="button" data-spin="0,-.28">Draw</button><button type="button" data-spin=".26,0">Side</button><span id="spin-status">Centre hit</span></div></div></div>
+ <div class="panel-bottom"><button type="button" class="shoot-button" id="shoot-button" disabled><span id="shoot-label">Take shot</span><span>↗</span></button><div class="shot-feedback" id="shot-feedback"><span class="feedback-marker"></span><span id="feedback-text">Your shot is ready when the table loads.</span></div></div>
+ </aside></div>
+ <div class="arena-footer"><span>3D PHYSICS ENGINE / LOCAL SIMULATION</span><span id="last-shot">No shots yet</span><div class="replay-buttons"><button type="button" id="replay-shot" disabled>↺ Replay shot</button><button type="button" id="replay-match" disabled>▻ Replay match</button></div><button type="button" id="fullscreen-button">Fullscreen ⛶</button></div>
+ <div class="replay-overlay" id="replay-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="replay-title">
+  <div class="replay-box"><header class="replay-header"><div><span class="eyebrow">THE BREAK ROOM / REPLAY</span><h2 id="replay-title">Replay</h2></div><button type="button" id="close-replay">✕ Close replay</button></header>
+  <div class="replay-screen"><iframe title="3D shot replay" id="replay-frame" src="about:blank" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="replay-loading" id="replay-loading">Loading replay...</div></div>
+  <div class="replay-transport" aria-label="Replay playback controls"><div class="replay-speeds" role="group" aria-label="Playback speed"><span>SPEED</span><button type="button" data-replay-speed="1" aria-pressed="true" class="active">1×</button><button type="button" data-replay-speed="2" aria-pressed="false">2×</button><button type="button" data-replay-speed="4" aria-pressed="false">4×</button></div><div class="replay-jump"><button type="button" id="replay-previous" disabled><span>⏮</span> Previous shot</button><span class="replay-position" id="replay-position" aria-live="polite">Shot 1</span><button type="button" id="replay-next" disabled>Next shot <span>⏭</span></button></div></div>
+  <footer class="replay-footer"><span id="replay-message">Watch the shot from different camera angles.</span><div><button type="button" id="save-replay-video">↓ Save video</button><button type="button" id="watch-again">↺ Play again</button><button type="button" id="resume-match">Return to match ↗</button></div></footer></div>
+ </div>
+</section>
+<footer class="site-footer" id="site-footer"><span>THE BREAK ROOM © <span id="current-year">2026</span> · PETER PU</span>
+ <span>3D physics based on <a href="https://github.com/tailuge/billiards" target="_blank" rel="noopener noreferrer">Tailuge Billiards</a>, GPL-3.0. <a href="https://peter-pu-billiards-engine.vercel.app/SOURCE.txt" target="_blank" rel="noopener noreferrer">Source &amp; license ↗</a></span></footer>
+</div>
+</body></html>
