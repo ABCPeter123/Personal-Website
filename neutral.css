@@ -1,0 +1,11 @@
+
+/* Neutral sans-serif revision. Original layout is influenced by the open-source Dark Minimal design; no components copied. */
+:root{--bg:#111315;--paper:#eef0ed;--soft:#bdc5bf;--muted:#98a39c;--line:#353b39;--accent:#c5d7b5;--serif:Inter,system-ui,-apple-system,sans-serif;--sans:Inter,system-ui,-apple-system,sans-serif}
+body{background:var(--bg);font-family:var(--sans)}.hero,.section,.about-section,.contact-section{font-family:var(--sans)}
+.hero h1{font-family:var(--sans);font-size:clamp(62px,7.7vw,101px);font-weight:700;letter-spacing:-.09em;line-height:1.04;margin-bottom:30px}
+.hero-statement{font-size:clamp(27px,3vw,40px);font-weight:550;letter-spacing:-.045em}
+.hero-statement i,.section h2 i,.about-section h2 i,.contact-section h2 i,.project-row h3 i{font-family:var(--sans);font-weight:600;font-style:normal;letter-spacing:-.06em;color:var(--paper)}
+.hero{padding-top:110px;padding-bottom:100px}.hero-aside{justify-content:center}.initial-graphic{display:none}.aside-top{margin-bottom:25px}.aside-row{grid-template-columns:75px 1fr;padding:21px 0}.aside-row strong{font-size:12px}
+.section-head h2,.about-section h2,.contact-section h2{font-family:var(--sans);font-size:clamp(40px,4.5vw,58px);font-weight:650;letter-spacing:-.072em;line-height:1.13}
+.project-writing h3,.project-row .project-writing h3{font-family:var(--sans);font-size:clamp(32px,4vw,50px);font-weight:650;letter-spacing:-.06em}
+.project-poster{transform:none;background:#292f2a;color:#dce7d7;box-shadow:none;border¶»§q«^

@@ -1,0 +1,8 @@
+This project is an original site informed by the layout study of:
+Dark Minimal, https://github.com/Gothsec/dark-minimal
+MIT License, Copyright (c) 2025 Oscar Hernandez.
+
+No template source components or binary assets were copied into this build.
+The template's attribution is included to acknowledge its design inspiration.
+
+Peter Pu portfolio code created for this project.

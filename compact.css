@@ -1,0 +1,9 @@
+/* Portfolio first, no artificial dashboard. */
+:root{--bg:#141619;--paper:#e9ecee;--accent:#d0dad1;--line:#363c3f}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:0}
+.eyebrow{color:#aab7ac}.hero{display:block;max-width:850px;padding:104px 0 115px}.hero h1{font-family:Inter,system-ui,sans-serif;font-size:clamp(46px,6vw,72px);line-height:1.14;font-weight:650;letter-spacing:-.065em;margin:19px 0 25px}.hero-statement{font-size:clamp(20px,3vw,28px);font-weight:500;max-width:720px;line-height:1.5;letter-spacing:-.025em;color:#c7cbcc}.hero-intro{max-width:570px}.hero-links{margin-top:27px}.hero .hero-main{max-width:100%}
+.section{padding-top:78px}.section-head h2,.about-section h2,.contact-section h2{font-family:Inter,sans-serif;font-size:clamp(30px,4vw,45px);font-weight:650;letter-spacing:-.05em}.section-head{margin-bottom:35px}
+.project-writing h3,.project-row .project-writing h3{font-size:clamp(26px,3vw,36px);font-family:Inter,sans-serif;font-weight:650;letter-spacing:-.055em;line-height:1.25}.project-row{grid-template-columns:115px 1fr;gap:50px}.project-row .project-writing{max-width:640px}
+.section-projects{padding-top:0}.about-section{padding:76px 0;background:#1a1e1f}.about-grid{gap:55px}.about-copy p{margin-top:0}.contact-section{padding:90px 0}.contact-section p:not(.eyebrow){font-size:14px}
+.preview-standin strong{font-size:clamp(40px,4vw,60px)}.preview-standin{background:#e4ece3}
+@media(max-width:780px){.hero{padding¶»§q«^
